@@ -22,8 +22,8 @@ trait TestSuite extends BeforeAndAfterAll {self: Suite =>
 
 @RunWith(classOf[JUnitRunner])
 class TestFileUtil extends FunSuite with TestSuite {
-  val testInputFile = "testdata/input-hello-world.txt"
-  val testTempOutputfile = "testdata/temp-output.txt"
+  val testInputFile = "common_util/testdata/input-hello-world.txt"
+  val testTempOutputfile = "common_util/testdata/temp-output.txt"
   val writeTestContents = "Write Test Contents"
   val helloWorld = "Hello World"
 
