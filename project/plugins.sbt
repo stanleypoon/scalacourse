@@ -1,0 +1,5 @@
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.14.6")
+addSbtPlugin("org.scalatra.scalate" % "sbt-scalate-precompiler" % "1.9.4.0")
+addSbtPlugin("org.xerial.sbt" % "sbt-pack" % "0.11")
+addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "5.2.4")
+addSbtPlugin("org.scoverage" % "sbt-scoverage" % "1.6.0")
