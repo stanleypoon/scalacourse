@@ -5,9 +5,15 @@ import sbt.Keys.sourceDirectory
 // coverageExcludedPackages := "<empty>;xyz.*;.*abc.*;aaa\\.bbb\\..*"
 // javaOptions in Test ++= Seq("-Xmx12g", "-Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n")
 
+
 lazy val commonSettings = Seq(
   version := "0.1.0",
   scalaVersion := "2.11.8",
+  // turn on coverage
+  // to generage report
+  //   > sbt PROJECT/test and then 
+  //   > sbt PROJECT/coverageReport
+  coverageEnabled := true,
   EclipseKeys.withSource := true,
   // parallelExecution in test := false,
   test in assembly := {},

@@ -3,6 +3,7 @@ package common.io
 import scala.io.{Source, StdIn}
 import java.io.File
 import java.io.PrintWriter
+import java.nio.file.{Files, Paths}
 
 object FileUtil {
   def readLines(fileName:String):Array[String] = {
@@ -33,6 +34,8 @@ object FileUtil {
     writer.close()
   }
 
+  def deleteFile(fileName:String):Unit = {
+    Files.deleteIfExists(Paths.get(fileName))
+  }
+
 }
-
-
