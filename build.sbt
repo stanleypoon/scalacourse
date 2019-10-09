@@ -2,9 +2,16 @@ import sbt.Keys.sourceDirectory
 
 // coverageMinimum := 50
 // coverageFailOnMinimum := true
-// coverageExcludedPackages := "<empty>;xyz.*;.*abc.*;aaa\\.bbb\\..*"
-// javaOptions in Test ++= Seq("-Xmx12g", "-Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n")
 
+// syntax for coverage exclusion
+// always starts with the <empty>;
+// or use *, e.g. *YourClassName
+// specific classes
+// coverageExcludedPackages := "<empty>;com.xyz.aClass;com.abc.*";
+// example from sbt doc 
+// coverageExcludedPackages := "<empty>;xyz.*;.*abc.*;aaa\\.bbb\\..*"
+
+// javaOptions in Test ++= Seq("-Xmx12g", "-Xdebug -Xrunjdwp:server=y,transport=dt_socket,address=8000,suspend=n")
 
 lazy val commonSettings = Seq(
   version := "0.1.0",
@@ -14,6 +21,7 @@ lazy val commonSettings = Seq(
   //   > sbt PROJECT/test and then 
   //   > sbt PROJECT/coverageReport
   coverageEnabled := true,
+  coverageExcludedPackages := ";Sandbox",
   EclipseKeys.withSource := true,
   // parallelExecution in test := false,
   test in assembly := {},

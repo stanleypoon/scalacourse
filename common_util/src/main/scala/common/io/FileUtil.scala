@@ -5,7 +5,7 @@ import java.io.File
 import java.io.PrintWriter
 import java.nio.file.{Files, Paths}
 
-object FileUtil {
+object FileUtil extends App {
   def readLines(fileName:String):Array[String] = {
     Source.fromFile(fileName).getLines().toArray
   }
@@ -37,5 +37,4 @@ object FileUtil {
   def deleteFile(fileName:String):Unit = {
     Files.deleteIfExists(Paths.get(fileName))
   }
-
 }
