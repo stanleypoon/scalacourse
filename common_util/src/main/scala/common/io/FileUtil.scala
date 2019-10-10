@@ -10,6 +10,10 @@ object FileUtil extends App {
     Source.fromFile(fileName).getLines().toArray
   }
 
+  def readURL(url:String):String = {
+    Source.fromURL(url).mkString
+  }
+
   def readFile(fileName:String):String = {
     Source.fromFile(fileName).mkString
   }
@@ -36,5 +40,9 @@ object FileUtil extends App {
 
   def deleteFile(fileName:String):Unit = {
     Files.deleteIfExists(Paths.get(fileName))
+  }
+
+  def deadCode():Unit = {
+    println("I would never be run.")
   }
 }

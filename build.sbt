@@ -64,7 +64,10 @@ lazy val common_util_dep = Seq(
 //  "org.apache.spark" % "spark-sql_2.11" % "2.2.1",
 //  "org.apache.spark" % "spark-core_2.11" % "2.2.1",
 //  "org.apache.spark" % "spark-mllib_2.11" % "2.2.1",
-  
+
+  "org.apache.commons" % "commons-lang3" % "3.9",
+  "org.apache.commons" % "commons-text" % "1.8",
+
 //*********** test only ****************
   "org.mockito" % "mockito-core" % "1.8.5" % "test",
   "junit" % "junit" % "4.10" % "test",

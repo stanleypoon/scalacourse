@@ -96,6 +96,11 @@ class TestFileUtil extends FunSuite with TestSuite {
     }
   }
 
+  test ("read from a URL") {
+    val siteContents = FileUtil.readURL("http://finance.yahoo.com")
+    assert(siteContents.size > 0)
+  }
+
   // **** the following redirect works within IDE
   // **** but it does not work from sbt command line
 
