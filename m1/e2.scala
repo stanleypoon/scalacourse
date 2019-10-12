@@ -1,3 +1,5 @@
+import scala.language.postfixOps
+
 val yf_text = readURL("https://finance.yahoo.com")
 val yf_words = removeStopWords(split(yf_text).map(_.toLowerCase))
 val yf_wc = count(yf_words)

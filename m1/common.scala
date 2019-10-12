@@ -3,6 +3,7 @@ import sys.process._
 import java.io.File
 import java.net.{URL, URLDecoder}
 import org.apache.commons.text.StringEscapeUtils.{escapeHtml4, unescapeHtml4}
+import scala.language.postfixOps
 
 def removeStopWords[T](words:Iterable[T]):Iterable[T] = {
     val STOP_WORDS = Seq("", "we", "our", "i", "not", "the", "for", "a", "and", "is", "in", "of", "to", "for", "–", "&", "$", "an", "are", "on", "as", "that", "from", "more", "most", "also", "may", "be", "by", "with", "at", "it", "or", "was", "been", "will", "can", "has", "have", "then", "their","this", "all", "not", "com", "how", "when", "what", "but", "than", "they", "into", "your", "you", "he", "she", "its", "her", "his", "where", "about", "such", "every")
