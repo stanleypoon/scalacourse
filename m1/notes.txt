@@ -1,0 +1,45 @@
+1) After installing SBT. How to enter into the Scala console (REPL) ?
+
+2) How to get help within the Scala REPL ?
+
+3) How to use the "tab" key to get information? The tab keystroke is called auto-complete or context help.
+
+4) Try out the following commands or code. It is very benefitial to try to guess the output before seeing the result. Describe and explain the output.
+
+:
+:sh ls
+val num_items = 10
+val priceI = 10
+val priceD = 10D
+val text = "Hello World"
+val text = List("Hello", "World")
+val text = List("Hello", 1)
+List("Hello", 1).map(e => 1 + e)
+List("Hello", 1).map(e => e.toString)
+:type priceI
+:type priceD
+println("Hello World")
+println(price, num_items, text)
+def product(a:Int, b:Double):Double = {a * b}
+product(1, 10.0)
+product(num_items, price)
+def concatI(a:String, b:Int): List[_] = {List(a,b)}
+concatI(1, "1")
+concatI("1", 1.0)
+concatI("1", 1)
+def concatD(a:String, b:Double): List[_] = { List(a,b) }
+concatD("1", 1.0)
+:q
+
+5) Write a function to print a list of integer out, one on each line. The function prototype:
+    def printList(integers:List[Int]):Unit = {}
+  
+   Fill in the code between the {}.
+
+   The test it:
+
+   val iList = List(1,2,3,4,5,6,7)
+   printList(iList)
+
+
+   Hint: List has a function to take a function to process each item. You can get that by using the "tab" key.
