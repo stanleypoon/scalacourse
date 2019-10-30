@@ -34,8 +34,10 @@ def write(fileName:String, contents:String):Unit = {
 }
 
 def readWriteFile(inFileName: String, outFileName:String):Unit = {
-  val fileContents = Source.fromFile(inFileName).mkString
+  val ifile = Source.fromFile(inFileName)
+  val fileContents = ifile.mkString
   write(outFileName, fileContents)
+  ifile.close()
 }
 
 readWriteFile("/Users/spoon/projects/scalacourse/m1/notes.txt", "/Users/spoon/projects/scalacourse/m1/m3_e1.txt")
