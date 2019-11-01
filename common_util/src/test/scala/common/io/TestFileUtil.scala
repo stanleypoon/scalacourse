@@ -5,19 +5,10 @@ import java.text.MessageFormat
 
 import org.junit.runner.RunWith
 import org.scalatest.junit.JUnitRunner
-import org.scalatest.{BeforeAndAfterAll, FunSuite, Suite, Tag}
+import org.scalatest.{FunSuite, Tag}
 import java.io._
 
-trait TestSuite extends BeforeAndAfterAll {self: Suite =>
-
-  protected override def beforeAll() {
-    super.beforeAll()
-  }
-
-  protected override def afterAll() {
-    super.afterAll()
-  }
-}
+import common.TestSuite
 
 @RunWith(classOf[JUnitRunner])
 class TestFileUtil extends FunSuite with TestSuite {
@@ -98,7 +89,13 @@ class TestFileUtil extends FunSuite with TestSuite {
 
   test ("read from a URL") {
     val siteContents = FileUtil.readURL("http://finance.yahoo.com")
+    val testFileName = "yahoo.finance.com.text"
     assert(siteContents.size > 0)
+    try {
+      FileUtil.saveURL("http://finance.yahoo.com", testFileName)
+    } finally {
+      FileUtil.deleteFile(testFileName)
+    }
   }
 
   // **** the following redirect works within IDE

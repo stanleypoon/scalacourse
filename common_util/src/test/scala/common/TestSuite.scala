@@ -1,5 +1,6 @@
 package common
 
-class TestSuite {
+import org.scalatest.{BeforeAndAfterAll, Suite}
 
+trait TestSuite extends BeforeAndAfterAll {self: Suite =>
 }

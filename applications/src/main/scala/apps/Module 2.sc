@@ -55,19 +55,20 @@ def readCSV(csvFile:String):Array[Array[String]] = {
   lineArrays.toArray
 }
 
+def mySplit(s:String):Array[String] = {
+  s.split(",")
+}
+
 // Same as readCSV except using map(): one of the functional programming primitives
 def readCSVF(csvFile:String):Iterator[Array[String]] = {
   val file = Source.fromFile(csvFile)
-  val lines = file.getLines()
-  lines.map(l => l.split(","))
+  val lines:Iterator[String] = file.getLines()
+  lines.map(s => mySplit(s))
 }
 
 val f: String => Boolean = (s:String) => true
 def f(s:String):Boolean = {true}
 
 val lines = readCSV("/Users/spoon/projects/scalacourse/common_util/testdata/cars.csv")
-val first:Array[String] = lines.head
+val first = lines(0)
 println(first.mkString(","))
-
-
-

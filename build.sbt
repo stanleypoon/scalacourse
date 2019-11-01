@@ -4,7 +4,7 @@ import sbt.Keys.sourceDirectory
 // coverageFailOnMinimum := true
 
 // syntax for coverage exclusion
-// always starts with the <empty>;
+// always starts with the <empty>; or just ;
 // or use *, e.g. *YourClassName
 // specific classes
 // coverageExcludedPackages := "<empty>;com.xyz.aClass;com.abc.*";
@@ -16,6 +16,8 @@ import sbt.Keys.sourceDirectory
 lazy val commonSettings = Seq(
   version := "0.1.0",
   scalaVersion := "2.11.8",
+  // for features from importing sys.process._
+  scalacOptions ++= Seq("-feature"),
   // turn on coverage
   // to generage report
   //   > sbt PROJECT/test and then 

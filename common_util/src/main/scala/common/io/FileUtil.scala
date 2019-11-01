@@ -1,9 +1,12 @@
 package common.io
 
 import scala.io.{Source, StdIn}
-import java.io.File
-import java.io.PrintWriter
+import java.io.{ByteArrayInputStream, File, PrintWriter}
+import java.net.URL
 import java.nio.file.{Files, Paths}
+
+import sys.process._
+import scala.language.postfixOps
 
 object FileUtil extends App {
   def readLines(fileName:String):Array[String] = {
@@ -12,6 +15,10 @@ object FileUtil extends App {
 
   def readURL(url:String):String = {
     Source.fromURL(url).mkString
+  }
+
+  def saveURL(url:String, outputFile:String):Unit = {
+    new URL(url) #> new File(outputFile) !!
   }
 
   def readFile(fileName:String):String = {
