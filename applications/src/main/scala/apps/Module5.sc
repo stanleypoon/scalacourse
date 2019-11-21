@@ -2,6 +2,12 @@ import scala.collection.mutable.ArrayBuffer
 import scala.io.Source
 import scala.util.matching.Regex
 
+// Module 5 Exercise **********************
+// Please try to anticipate the output from the following lines
+// It is to clarify the concept of function declarations and definitions
+// in the form of value, function.
+// Using the do Nothing function as an example.
+
 def doNothing(a:Any):Unit = ()
 
 val whatIsThis = (1 to 3).map(doNothing)
@@ -18,6 +24,7 @@ val doNothingFunctionAsValue = (a:Any) => ()
 val whatIsThisThen = (1 to 3).map(doNothingFunctionAsValue)
 println(whatIsThisThen.mkString(","))
 
+// End of Exercise **********************
 
 case class MyNewClass(i:Int)
 
