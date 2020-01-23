@@ -15,7 +15,7 @@ import sbt.Keys.sourceDirectory
 
 lazy val commonSettings = Seq(
   version := "0.1.0",
-  scalaVersion := "2.11.8",
+  scalaVersion := "2.12.9",
   // for features from importing sys.process._
   scalacOptions ++= Seq("-feature"),
   // turn on coverage
@@ -61,7 +61,7 @@ lazy val applications = project
        common_util
    )
 
-lazy val common_util_dep = Seq(
+lazy val common_util_dep = Seq (
 
 //  "org.apache.spark" % "spark-sql_2.11" % "2.2.1",
 //  "org.apache.spark" % "spark-core_2.11" % "2.2.1",
@@ -71,7 +71,14 @@ lazy val common_util_dep = Seq(
   "org.apache.commons" % "commons-text" % "1.8",
 
 //*********** test only ****************
-  "org.mockito" % "mockito-core" % "1.8.5" % "test",
+
   "junit" % "junit" % "4.10" % "test",
-  "org.scalatest" %% "scalatest" % "2.2.4" % "test",
-  "org.scalacheck" %% "scalacheck" % "1.12.4" % "test")
+  "org.scalatest" %% "scalatest" % "3.0.8" % "test",
+  "org.scalacheck" %% "scalacheck" % "1.14.2" % "test"
+
+//  "org.mockito" % "mockito-core" % "1.8.5" % "test",
+//  "junit" % "junit" % "4.10" % "test",
+//  "org.scalatest" %% "scalatest" % "2.2.4" % "test",
+//  "org.scalacheck" %% "scalacheck" % "1.12.4" % "test"
+
+)

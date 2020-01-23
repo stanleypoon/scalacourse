@@ -4,7 +4,7 @@ import java.nio.file.{Files, Paths}
 import java.text.MessageFormat
 
 import org.junit.runner.RunWith
-import org.scalatest.junit.JUnitRunner
+import org.scalatestplus.junit.JUnitRunner
 import org.scalatest.{FunSuite, Tag}
 import java.io._
 
